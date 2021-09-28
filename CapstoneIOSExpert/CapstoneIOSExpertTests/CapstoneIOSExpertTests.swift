@@ -47,7 +47,7 @@ class CapstoneIOSExpertTests: XCTestCase {
         
         sut.getNewList()
         sut.getListGamesData.drive(onNext: { list in
-            XCTAssertEqual(list.count, numberOfRow, "count number of rows is not same")
+            XCTAssertEqual(list.count, 5, "count number of rows is not same")
         }).disposed(by: disposeBag)
     }
 }
