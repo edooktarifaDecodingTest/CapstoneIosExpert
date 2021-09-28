@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="Profile" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="CCE-3h-FdT">
+                    <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nama: Edo Oktarifa Alamat: Bukittinggi, Sumatra Barat" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1T-w7-9Q6">
+                    <rect key="frame" x="10" y="502" width="394" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CCE-3h-FdT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8hf-ZT-h1r"/>
+                <constraint firstItem="CCE-3h-FdT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Nkw-wu-PT4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CCE-3h-FdT" secondAttribute="trailing" id="Qyd-ji-32B"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B1T-w7-9Q6" secondAttribute="trailing" constant="10" id="YPo-Ds-IZA"/>
+                <constraint firstItem="B1T-w7-9Q6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="cqJ-Ff-0PK"/>
+                <constraint firstItem="CCE-3h-FdT" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="djl-Rq-AVf"/>
+                <constraint firstItem="B1T-w7-9Q6" firstAttribute="top" secondItem="CCE-3h-FdT" secondAttribute="bottom" constant="10" id="pXj-AO-ovb"/>
+            </constraints>
+            <point key="canvasLocation" x="32" y="50"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="profileImg.jpg" width="4032" height="3024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,59 @@
+PODS:
+  - Alamofire (5.4.4)
+  - Cosmos (23.0.0)
+  - Kingfisher (6.3.1)
+  - netfox (1.19.0)
+  - Nimble (9.2.1)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - Quick (4.0.0)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SkeletonView (1.25.1)
+  - Swinject (2.8.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - Cosmos (~> 23.0)
+  - Kingfisher
+  - netfox
+  - Nimble
+  - NVActivityIndicatorView
+  - Quick
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - SkeletonView
+  - Swinject
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Cosmos
+    - Kingfisher
+    - netfox
+    - Nimble
+    - NVActivityIndicatorView
+    - Quick
+    - RxCocoa
+    - RxSwift
+    - SkeletonView
+    - Swinject
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  netfox: efeec1d23406df6cd605212f09a40957bb5654eb
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SkeletonView: 77079530e1348a72f48b79ae30dcb966c1b18b6a
+  Swinject: db795b8d6d78559b25fbebb0170d2635be1176e2
+
+PODFILE CHECKSUM: a118f3e5a286bb04af82e5c0098f5340405ca087
+
+COCOAPODS: 1.10.1

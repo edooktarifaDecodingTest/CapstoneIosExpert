@@ -1,0 +1,62 @@
+platform :ios, '10.0'
+
+use_frameworks!
+
+workspace 'Modularization'
+
+def application_pods
+  pod 'Alamofire', '~> 5.4'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
+  pod 'netfox'
+  pod 'SkeletonView'
+  pod 'Kingfisher'
+  pod 'Cosmos', '~> 23.0'
+  pod 'NVActivityIndicatorView'
+  pod 'Swinject'
+end
+
+target 'CapstoneIOSExpert' do
+  	application_pods
+end
+
+target 'CapstoneIOSExpertTests' do
+      inherit! :search_paths
+      pod 'Quick'
+      pod 'Nimble'
+      application_pods
+end
+
+target 'Detail' do
+	project '../Detail/Detail'
+	application_pods
+end
+
+target 'Domain' do
+  project '../Domain/Domain'
+  application_pods
+end
+
+target 'Favourite' do
+	project '../Favourite/Favourite'
+  application_pods
+end
+
+target 'Profile' do
+	project '../Profile/Profile'
+end
+
+target 'NetworkServices' do
+	project '../NetworkServices/NetworkServices'
+	application_pods
+end
+
+target 'Core' do
+	project '../Core/Core'
+end
+
+target 'Common' do
+  project '../Common/Common'
+  pod 'RxCocoa', '~> 4.0'
+end
+
