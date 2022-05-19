@@ -1,0 +1,6 @@
+framework module CommonLibHelperCapstone {
+  umbrella header "CommonLibHelperCapstone-umbrella.h"
+
+  export *
+  module * { export * }
+}
