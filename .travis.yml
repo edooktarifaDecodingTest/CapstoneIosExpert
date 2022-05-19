@@ -1,0 +1,6 @@
+
+language: swift	
+osx_image: xcode13.2
+xcode_project: CapstoneIOSExpert.xcodeproj
+xcode_scheme: CapstoneIOSExpert
+xcode_destination: platform=iOS Simulator,OS=15.2,name=iPhone 12
