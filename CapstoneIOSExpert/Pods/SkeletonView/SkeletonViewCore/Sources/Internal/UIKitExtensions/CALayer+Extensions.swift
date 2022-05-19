@@ -78,7 +78,7 @@ extension CALayer {
         insertSublayer(sublayer.contentLayer, at: index)
         switch transition {
         case .none:
-            completion?()
+            DispatchQueue.main.async { completion?() }
         case .crossDissolve(let duration):
             sublayer.contentLayer.setOpacity(from: 0, to: 1, duration: duration, completion: completion)
         }
@@ -88,15 +88,16 @@ extension CALayer {
 
 private extension CALayer {
     
-    func alignLayerFrame(_ rect: CGRect, alignment: NSTextAlignment, isRTL: Bool) -> CGRect {
+    func alignLayerFrame(_ rect: CGRect, paddingInsets: UIEdgeInsets, alignment: NSTextAlignment, isRTL: Bool) -> CGRect {
         var newRect = rect
+        let superlayerWidth = (superlayer?.bounds.width ?? 0)
 
         switch alignment {
         case .natural where isRTL,
              .right:
-            newRect.origin.x = (superlayer?.bounds.width ?? 0) - rect.origin.x - rect.width
+            newRect.origin.x = superlayerWidth - rect.width - paddingInsets.right
         case .center:
-            newRect.origin.x = rect.origin.x + ((superlayer?.bounds.width ?? 0) - rect.width) / 2
+            newRect.origin.x = (superlayerWidth + paddingInsets.left - paddingInsets.right - rect.width) / 2
         case .natural, .left, .justified:
             break
         @unknown default:
@@ -188,6 +189,19 @@ extension CALayer {
                                    isRTL: config.isRTL
             )
         }
+        
+        guard config.shouldCenterVertically,
+              let maxY = currentSkeletonSublayers.last?.frame.maxY else {
+            return
+        }
+        let verticallyCenterAlignedFrames = currentSkeletonSublayers.map { layer -> CGRect in
+            let moveDownBy = (bounds.height - (maxY + paddingInsets.top + paddingInsets.bottom)) / 2
+            return layer.frame.offsetBy(dx: 0, dy: moveDownBy)
+        }
+        
+        for (index, layer) in currentSkeletonSublayers.enumerated() {
+            layer.frame = verticallyCenterAlignedFrames[index]
+        }
     }
 
     func updateLayerFrame(for index: Int, totalLines: Int, size: CGSize, multilineSpacing: CGFloat, paddingInsets: UIEdgeInsets, alignment: NSTextAlignment, isRTL: Bool) {
@@ -198,7 +212,7 @@ extension CALayer {
                               height: size.height)
 
         if index == totalLines - 1 {
-            frame = alignLayerFrame(newFrame, alignment: alignment, isRTL: isRTL)
+            frame = alignLayerFrame(newFrame, paddingInsets: paddingInsets, alignment: alignment, isRTL: isRTL)
         } else {
             frame = newFrame
         }

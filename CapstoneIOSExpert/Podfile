@@ -14,6 +14,7 @@ def application_pods
   pod 'Cosmos', '~> 23.0'
   pod 'NVActivityIndicatorView'
   pod 'Swinject'
+  pod 'CommonLibHelperCapstone', :git => 'https://github.com/edooktarifa/CommonLibHelperCapstone.git', :tag => '0.1.2'
 end
 
 target 'CapstoneIOSExpert' do

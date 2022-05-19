@@ -10,7 +10,6 @@ import Detail
 import NetworkServices
 import RxSwift
 import Core
-import Common
 
 class ViewController: UIViewController {
 

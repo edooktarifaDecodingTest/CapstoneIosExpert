@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 import Core
-import Common
+import CommonLibHelperCapstone
 
 public class FavouriteVC: UIViewController {
     

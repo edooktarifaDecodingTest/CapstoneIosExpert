@@ -59,37 +59,39 @@ struct SkeletonLayer {
     /// If there is more than one line, or custom preferences have been set for a single line, draw custom layers
     func addTextLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
-        let config = SkeletonMultilinesLayerConfig(lines: textView.numberOfLines,
-                                                   lineHeight: textView.lineHeight,
+        let config = SkeletonMultilinesLayerConfig(lines: textView.estimatedNumberOfLines,
+                                                   lineHeight: textView.estimatedLineHeight,
                                                    type: type,
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
                                                    multilineSpacing: textView.multilineSpacing,
                                                    paddingInsets: textView.paddingInsets,
                                                    alignment: textView.textAlignment,
-                                                   isRTL: holder?.isRTL ?? false)
+                                                   isRTL: holder?.isRTL ?? false,
+                                                   shouldCenterVertically: textView.shouldCenterTextVertically)
 
         maskLayer.addMultilinesLayers(for: config)
     }
     
     func updateLinesIfNeeded() {
         guard let textView = holderAsTextView else { return }
-        let config = SkeletonMultilinesLayerConfig(lines: textView.numberOfLines,
-                                                   lineHeight: textView.lineHeight,
+        let config = SkeletonMultilinesLayerConfig(lines: textView.estimatedNumberOfLines,
+                                                   lineHeight: textView.estimatedLineHeight,
                                                    type: type,
                                                    lastLineFillPercent: textView.lastLineFillingPercent,
                                                    multilineCornerRadius: textView.multilineCornerRadius,
                                                    multilineSpacing: textView.multilineSpacing,
                                                    paddingInsets: textView.paddingInsets,
                                                    alignment: textView.textAlignment,
-                                                   isRTL: holder?.isRTL ?? false)
+                                                   isRTL: holder?.isRTL ?? false,
+                                                   shouldCenterVertically: textView.shouldCenterTextVertically)
         
         maskLayer.updateMultilinesLayers(for: config)
     }
     
     var holderAsTextView: SkeletonTextNode? {
         guard let textView = holder as? SkeletonTextNode,
-            (textView.numberOfLines == -1 || textView.numberOfLines == 0 || textView.numberOfLines > 1 || textView.numberOfLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
+            (textView.estimatedNumberOfLines == -1 || textView.estimatedNumberOfLines == 0 || textView.estimatedNumberOfLines > 1 || textView.estimatedNumberOfLines == 1 && !SkeletonAppearance.default.renderSingleLineAsView) else {
                 return nil
         }
         return textView

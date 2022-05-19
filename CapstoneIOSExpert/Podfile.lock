@@ -1,21 +1,23 @@
 PODS:
-  - Alamofire (5.4.4)
+  - Alamofire (5.6.1)
+  - CommonLibHelperCapstone (0.1.2)
   - Cosmos (23.0.0)
   - Kingfisher (6.3.1)
-  - netfox (1.19.0)
-  - Nimble (9.2.1)
+  - netfox (1.21.0)
+  - Nimble (10.0.0)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
-  - Quick (4.0.0)
+  - Quick (5.0.1)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
-  - SkeletonView (1.25.1)
-  - Swinject (2.8.0)
+  - SkeletonView (1.29.2)
+  - Swinject (2.8.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - CommonLibHelperCapstone (from `https://github.com/edooktarifa/CommonLibHelperCapstone.git`, tag `0.1.2`)
   - Cosmos (~> 23.0)
   - Kingfisher
   - netfox
@@ -41,19 +43,30 @@ SPEC REPOS:
     - SkeletonView
     - Swinject
 
+EXTERNAL SOURCES:
+  CommonLibHelperCapstone:
+    :git: https://github.com/edooktarifa/CommonLibHelperCapstone.git
+    :tag: 0.1.2
+
+CHECKOUT OPTIONS:
+  CommonLibHelperCapstone:
+    :git: https://github.com/edooktarifa/CommonLibHelperCapstone.git
+    :tag: 0.1.2
+
 SPEC CHECKSUMS:
-  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  CommonLibHelperCapstone: 5f052e92ddc0d9f50e27117a2cf6793c75b0dcdb
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
-  netfox: efeec1d23406df6cd605212f09a40957bb5654eb
-  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
-  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  SkeletonView: 77079530e1348a72f48b79ae30dcb966c1b18b6a
-  Swinject: db795b8d6d78559b25fbebb0170d2635be1176e2
+  SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
+  Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
 
-PODFILE CHECKSUM: a118f3e5a286bb04af82e5c0098f5340405ca087
+PODFILE CHECKSUM: e9111bd793a90579f10674adde7499e7c728f3fa
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
